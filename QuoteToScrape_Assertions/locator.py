@@ -16,9 +16,17 @@ class Locators:
     AUTHOR_IN_QUOTE_BLOCK = (By.XPATH,'//small[@itemprop="author"]')
     ABOUT_LINK_IN_QUOTE_BLOCK = (By.XPATH,'//a[contains(text(),"(about)")]')
     TAGS_IN_QUOTE_BLOCK = (By.XPATH,'//div[@class="tags"]//a[@class="tag"]')
+
     
     # locator for next button to navigate the pages
-    NEXT_LINK = (By.XPATH,'//li[@class="next"]/a') 
+    NEXT_LINK = (By.XPATH,'//li[@class="next"]/a')
+    PREVIOUS_LINK = (By.XPATH,'//a[contains(text(),"Previous")]')
     
     # locator for all the tags in the top ten quotes section in the homepage
     TOP_TEN_TAGS = (By.XPATH,'//span/a[@class="tag"]')
+    
+    # locators for author title, dob, location and description in author details page
+    AUTHOR_TITLE = (By.XPATH,'//h3[@class="author-title"]')
+    AUTHOR_DOB = (By.XPATH,'//span[@class="author-born-date"]')
+    AUTHOR_BIRTH_LOCATION = (By.XPATH,'//span[@class="author-born-location"]')
+    AUTHOR_DESCRIPTION = (By.XPATH,'//div[@class="author-description"]')

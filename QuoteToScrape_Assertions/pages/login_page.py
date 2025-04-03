@@ -22,5 +22,11 @@ class LoginPage:
     def is_logout_link_visible(self):
         return self.wait.until(EC.presence_of_element_located(Locators.LOGOUT_LINK)).text 
     
+    def is_login_link_visible(self):
+        return self.wait.until(EC.presence_of_element_located(Locators.LOGIN_LINK)).text 
+    
+    def click_logout_link(self):
+        self.wait.until(EC.presence_of_element_located(Locators.LOGOUT_LINK)).click()
+    
     def login_error_msg(self):
         return self.wait.until(EC.presence_of_element_located(Locators.LOGIN_ERROR)).text

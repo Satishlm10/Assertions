@@ -1,6 +1,7 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locator import Locators
+from selenium.webdriver.common.by import By
 
 class Quote_Blocks:
     def __init__(self, driver):
@@ -24,3 +25,8 @@ class Quote_Blocks:
     
     def get_top_ten_tag_in_homepage(self):
         return self.wait.until(EC.presence_of_all_elements_located(Locators.TOP_TEN_TAGS))
+    
+    def get_tags_from_each_quote_blocks(self,num):
+        return self.wait.until(EC.presence_of_all_elements_located((By.XPATH,f"(//div[@class = 'tags'])[{num}]//a")))
+    
+    

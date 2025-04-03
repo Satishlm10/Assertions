@@ -9,4 +9,7 @@ class Navigation_Links:
 
     def click_next_link(self):
         self.wait.until(EC.visibility_of_element_located(Locators.NEXT_LINK)).click()
+        
+    def click_previous_link(self):
+        self.wait.until(EC.presence_of_element_located(Locators.PREVIOUS_LINK)).click()
 

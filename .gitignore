@@ -1,7 +1,5 @@
-/Pipfile
+# Node modules
+node_modules/
 
-/Pipfile.lock
 
-/.dist
-
-/__pycache__
+.dist/

@@ -18,6 +18,10 @@ class MenuItem extends Page{
     async clickDrawingMenuItem(){
         await menuItems.drawingMenuItem.click()
     }
+
+    async clickCatalogMenuItem(){
+        await menuItems.catalogMenuItem.click()
+    }
 }
 
 module.exports = new MenuItem()

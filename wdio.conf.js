@@ -59,7 +59,7 @@ exports.config = {
         "appium:deviceName": "FEAY4PAQS4T8T4X4",
         "appium:platformVersion": "14",
         "appium:app": "C:/Users/nerus/Downloads/mda-2.2.0-25.apk",
-        "appium:newCommandTimeout": 3600,
+        "appium:newCommandTimeout": 60000,
         "appium:automationName": "UiAutomator2",
         "appium:ignoreHiddenApiPolicyError": true,
         "appium:skipDeviceInitialization": true,
@@ -67,6 +67,7 @@ exports.config = {
         "appium:fullReset": true,
         "appium:appPackage": "com.saucelabs.mydemoapp.android",
         "appium:remoteAppsCacheLimit": 0,
+        "appium:  implicitWaitTimeout": 10000
     }],
 
     //

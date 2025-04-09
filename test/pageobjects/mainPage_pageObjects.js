@@ -37,6 +37,10 @@ class MainPage extends Page{
         await mainPage_Locators.sortByPriceDescending.click()
     }
 
+    async clickFirstProduct(){
+        await mainPage_Locators.firstProduct.click()
+    }
+
 }
 
 module.exports = new MainPage();

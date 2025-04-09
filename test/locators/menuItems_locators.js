@@ -1,4 +1,4 @@
-
+const { $ } = require('@wdio/globals')
 class MenuItems_Locators{
     get catalogMenuItem() {return $('//android.widget.TextView[@resource-id="com.saucelabs.mydemoapp.android:id/itemTV" and @text="Catalog"]')}
     get webViewMenuItem() {return $('//android.widget.TextView[@resource-id="com.saucelabs.mydemoapp.android:id/itemTV" and @text="WebView"]')}

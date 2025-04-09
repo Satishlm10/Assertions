@@ -40,6 +40,14 @@ class MainPage_Locators  {
     get allProductsInCatalogPage(){
         return $$('//android.widget.TextView[@content-desc="Product Title"]')
     }
+
+    get socialLinks(){
+        return $('//android.widget.LinearLayout[@resource-id="com.saucelabs.mydemoapp.android:id/socialLL"]')
+    }
+
+    get firstProduct(){
+        return $('(//android.widget.ImageView[@content-desc="Product Image"])[1]')
+    }
 };
 
 module.exports = new MainPage_Locators();

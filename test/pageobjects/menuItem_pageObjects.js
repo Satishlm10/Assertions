@@ -1,5 +1,6 @@
 const Page = require('./page')
 const menuItems = require('../locators/menuItems_locators')
+const menuItems_locators = require('../locators/menuItems_locators')
 
 class MenuItem extends Page{
     async clickLoginMenuItem(){
@@ -20,7 +21,12 @@ class MenuItem extends Page{
     }
 
     async clickCatalogMenuItem(){
+      
         await menuItems.catalogMenuItem.click()
+    }
+
+    async clickToggleFingerPrint(){
+        await menuItems_locators.toggleFingerPrint.click()
     }
 }
 

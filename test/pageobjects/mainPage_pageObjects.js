@@ -4,14 +4,17 @@ const mainPage_Locators = require('../locators/mainPage_locators')
 
 class MainPage extends Page{
     async clickMenu() {
+       
         await mainPage_Locators.menuIcon.click()
     }
 
     async clickSortIcon(){
+        
         await mainPage_Locators.sortIcon.click()
     }
     
     async clickCartIcon(){
+       
         await mainPage_Locators.cartIcon.click()
     }
 
@@ -26,6 +29,7 @@ class MainPage extends Page{
     }
 
     async clickSortByNameDescending(){
+       
         await mainPage_Locators.sortByNameDescending.click()
     }
 

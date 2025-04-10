@@ -1,7 +1,7 @@
 const Page = require('./page')
 const ProductDetails_Locators = require('../locators/product_details_locators')
 
-class ProductDetails{
+class ProductDetails extends Page{
     async clickAddToCartBtn(){
         await ProductDetails_Locators.addToCart.click()
     }

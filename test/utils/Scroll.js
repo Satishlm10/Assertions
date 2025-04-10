@@ -1,11 +1,26 @@
 const { browser } = require('@wdio/globals')
 const mainPage_locators = require('../locators/mainPage_locators')
 class Scroll {
+
+    constructor() {
+        this.anchor = null;
+        this.startPoint = null;
+        this.endPoint = null;
+        this.initialized = false;
+    }
+
+    async initScrollValues() {
+        if (!this.initialized) {
+            const { height, width } = await browser.getWindowSize();
+            this.anchor = Math.round(width * 0.5);
+            this.startPoint = Math.round(height * 0.8);
+            this.endPoint = Math.round(height * 0.1);
+            this.initialized = true;
+        }
+    }
+
     async scrolling() {
-        const { height, width } = await browser.getWindowSize();
-        const anchor = Math.round(width * 0.5);
-        const startPoint = Math.round(height * 0.8);
-        const endPoint = Math.round(height * 0.1);
+        await this.initScrollValues();
     
         await browser.performActions([
             {
@@ -13,10 +28,10 @@ class Scroll {
                 id: "finger1",
                 parameters: { pointerType: "touch" },
                 actions: [
-                    { type: "pointerMove", duration: 0, x: anchor, y: startPoint }, 
+                    { type: "pointerMove", duration: 0, x: this.anchor, y: this.startPoint }, 
                     { type: "pointerDown", button: 0 }, 
-                    { type: "pause", duration: 500 }, 
-                    { type: "pointerMove", duration: 1000, x: anchor, y: endPoint }, 
+                    { type: "pause", duration: 1000 }, 
+                    { type: "pointerMove", duration: 3000, x: this.anchor, y: this.endPoint }, 
                     { type: "pointerUp", button: 0 } 
                 ]
             }
@@ -37,17 +52,17 @@ class Scroll {
            let socialLinkVisibility = false
     
            while(socialLinkVisibility === false){
-                
-                let products = await mainPage_locators.allProductsInCatalogPage
                 await browser.pause(1000)
-                products.forEach(async product => {
+                let products = await mainPage_locators.allProductsInCatalogPage
+                await products.forEach(async product => {
+                     await browser.pause(1000)
                      const title = await product.getText()
-                     allProducts.push(title)  });
+                      allProducts.push(title)  });
                 
                 await this.scrolling()
                 socialLinkVisibility = await mainPage_locators.socialLinks.isExisting()
            }
-           await browser.pause(1000)
+      
            return allProducts
         }
   

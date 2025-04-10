@@ -64,10 +64,7 @@ exports.config = {
         "appium:ignoreHiddenApiPolicyError": true,
         "appium:skipDeviceInitialization": true,
         "appium:autoGrantPermissions": true,
-        "appium:fullReset": true,
-        "appium:appPackage": "com.saucelabs.mydemoapp.android",
-        "appium:remoteAppsCacheLimit": 0,
-        "appium:  implicitWaitTimeout": 10000
+        "appium:fullReset": true
     }],
 
     //

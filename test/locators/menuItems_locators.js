@@ -11,5 +11,7 @@ class MenuItems_Locators{
     get loginMenuItem() {return $('~Login Menu Item')}
     get logoutMenuItem() {return $('~Logout Menu Item')}
     get logoutDialogBtn() {return $('//android.widget.Button[@resource-id="android:id/button1"]')}
+
+    get toggleFingerPrint(){return $('~Enable or disable biometric login')}
 }
 module.exports = new MenuItems_Locators();

@@ -9,6 +9,11 @@ class UserLogin {
         await loginForm.enterUsernameAndPassword(username,password)
         await loginForm.clickLoginBtn()
     }
+
+    async enter_credentials(username,password){
+        await loginForm.enterUsernameAndPassword(username,password)
+        await loginForm.clickLoginBtn()
+    }
 }
 
 module.exports = new UserLogin()
